@@ -16,16 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Check Python version Before Install
-        run: python3 --version
-
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
-
-      - name: Check Python version After Install
-        run: python3 --version
 
       - name: Install Dependencies
         run: |
@@ -36,7 +30,7 @@ jobs:
         run: |
           python manage.py makemigrations
           python manage.py migrate
-          
+
       - name: Run The Tests
         run: |
           python manage.py test
