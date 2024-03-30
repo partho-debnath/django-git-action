@@ -12,4 +12,4 @@ class MyTestCase(TestCase):
         self.assertEqual(self.post.name, "this is a post.")
 
     def test_sum(self):
-        self.assertEqual(20, (10 + 10))
+        self.assertEqual(20, (10 + 101))
